@@ -1,11 +1,22 @@
+/* * {
+  border: 1px solid red;
+} */
+
+.header-container{
+  padding: 4rem 2rem;
+}
+
+#orderInfo {
+  margin: 1rem;
+}
+
 .flex-center-container {
   justify-content: center;
   width: 100%;
 }
 
 .input-container {
-  width: 30%;
-  margin: 1rem;
+  width: 50%;
 }
 
 .sizeSurvey label {
@@ -13,7 +24,7 @@
   background-color: #ddd;
   padding: 4px 11px;
   font-family: Arial;
-  font-size: 16px;
+  font-size: 14px;
   cursor: pointer;
 }
 
@@ -30,9 +41,9 @@
 .radio-toolbar label {
     display: inline-block;
     background-color: #ddd;
-    padding: 10px 20px;
+    padding: 8px 16px;
     font-family: sans-serif, Arial;
-    font-size: 16px;
+    font-size: 14px;
     border: 2px solid #444;
     border-radius: 4px;
 }
@@ -48,4 +59,26 @@
 .radio-toolbar input[type="radio"]:checked + label {
     background-color: rgb(7, 199, 247);
     border-color: rgb(0, 114, 253);
+}
+
+#receipt {
+  /* display: none; */
+  border: 2px solid #333;
+  border-radius: 4px;
+  width: 50%;
+  margin: 1rem;
+}
+
+#receiptHeader {
+  padding: 16px ;
+  margin: 10px;
+  text-align: center;
+  font-weight: bold;
+  line-height: 50%;
+}
+
+#receiptContent {
+  padding: 16px;
+  margin: 10px;
+  font-weight: bold;
 }

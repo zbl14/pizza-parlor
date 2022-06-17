@@ -34,18 +34,7 @@ $(document).ready(function() {
     let cost = parseFloat(myPizza.cost().toFixed(2));
     let tax = parseFloat((cost * 0.075).toFixed(2));
     let tips = parseFloat(((cost + tax) * tipsPct).toFixed(2));
-    let total = cost + tax + tips
-  
-    
-  
-    
-  
-    // $("#tips").click(function(){
-
-    // });
-
-
-
+    let total = (cost + tax + tips).toFixed(2);
     $(".name").html(myPizza.name);
     $(".addr").html(myPizza.addr);
     $(".size").html(myPizza.size);
@@ -54,5 +43,6 @@ $(document).ready(function() {
     $(".tax").html("$ " + tax);
     $(".tips").html("$ " + tips);
     $(".total").html("$ " + total);
+    $("#receipt").show();
   });
 });

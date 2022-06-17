@@ -7,7 +7,10 @@
   <script src="js/scripts.js"></script>
   <title>Pizza Parlor</title>
 </head>
-<body>
+<body class="container">
+  <header>
+    <h1 class="header-container">Welcome to Pizaa Parlor</h1>
+  </header>
   <form id = "orderInfo" class="form-group">
     <div class="flex-center-container">
       <div class="input-container">
@@ -19,7 +22,7 @@
         <input type="text"  class="form-control" id="inputtedAddr">
       </div>
     </div>
-
+    <br>
     <div>
       <p>Which size would you like?</p>
       <div class="sizeSurvey">
@@ -41,7 +44,7 @@
         </label>
       </div>
     </div>
-
+    <br>
     <div class="form-group">
       <p>Pick your favourite toppings</p>
       <input type="checkbox" name="toppingsList" value="Cheese"> Cheese<br>
@@ -53,12 +56,10 @@
       <input type="checkbox" name="toppingsList" value="Pineapple"> Pineapple<br>
       <input type="checkbox" name="toppingsList" value="Pineapple"> Black Olives<br>
     </div>
-
     <div class="flex-center-container">
       <button type="submit" class="btn-primary">Submit</button>
     </div>
     <br>
-
     <div class="radio-toolbar" id ="tips">
       <input type="radio" class="btn-check" name="tipsPct" id="noTips" value="0" autocomplete="off" checked>
       <label class="btn btn-outline-primary" for="noTips">No Tips</label>
@@ -73,16 +74,23 @@
       <label class="btn btn-outline-primary" for="18Pct">18%</label>
     </div>
   </form>
-
   <div id="receipt">
-    <p>Name: <span class="name"></span></p>
-    <p>Delivery Address: <span class="addr"></span></p>
-    <p>Selected Size: <span class="size"></span></p>
-    <p>Selected Toppings: <span class="toppings"></span></p>
-    <p>Subtotal: <span class="cost"></span></p>
-    <p>tax: <span class="tax"></span></p>
-    <p>Tips: <span class="tips"></span></p>
-    <p>Total: <span class="total"></span></p>
+    <div id="receiptHeader">
+      <P>Earn Points for Free pizza</p>
+      <P>Join MyPizzaRewards on the app</p>
+      <p>Email us comments or concers</p>
+      <p>mypizza@parlor.com</p>
+    </div>
+    <div id="receiptContent">
+      <p>Name: <span class="name"></span></p>
+      <p>Delivery Address: <span class="addr"></span></p>
+      <p>Selected Size: <span class="size"></span></p>
+      <p>Selected Toppings: <span class="toppings"></span></p>
+      <p>Subtotal: <span class="cost"></span></p>
+      <p>tax: <span class="tax"></span></p>
+      <p>Tips: <span class="tips"></span></p>
+      <p>Total: <span class="total"></span></p>
+   </div>
   </div>
 </body>
 </html>

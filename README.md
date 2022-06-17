@@ -1,4 +1,4 @@
-## TDD
+## Specs
 ```sh
 Describe: Pizza()
 ```
