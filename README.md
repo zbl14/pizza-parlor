@@ -68,7 +68,7 @@ Expected Output: 1
 Describe: addPizza()
 ```
 Test: "It should return a Order object with id 1 and a Pizza object"\
-Code: \
+Code:\
 let myPizza = new Pizza("Ben", "address", ["apple" , "cheese"], "Medium")\
 myOrder.addPizza(myPizza);\
 Expected Output:\
@@ -77,7 +77,19 @@ itemId: 1\
 pizzas:\
 1: Pizza {name: 'Ben', addr: 'address', toppings: Array(2), size: 'Medium', id: 1}\
 
-
+```sh
+Describe: findPizza()
+```
+Test: "It should return the pizza object according its assigned ID"\
+Code:\
+let myPizza = new Pizza("Ben", "address", ["apple" , "cheese"], "Medium")\
+myOrder.addPizza(myPizza);\
+findPizza(1);\
+Expected Output:\
+Order {pizzas: {…}, itemId: 1}\
+itemId: 1\
+pizzas:\
+1: Pizza {name: 'Ben', addr: 'address', toppings: Array(2), size: 'Medium', id: 1}\
 
 ## Known Bugs
 

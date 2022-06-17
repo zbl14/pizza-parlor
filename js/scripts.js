@@ -1,3 +1,4 @@
+//Business Logics
 function Order() {
   this.pizzas = {};
   this.itemId = 0;
@@ -11,6 +12,13 @@ Order.prototype.assignId = function() {
 Order.prototype.addPizza = function(pizza) {
   pizza.id = this.assignId();
   this.pizzas[pizza.id] = pizza;
+};
+
+Order.prototype.findPizza = function(id) {
+  if (this.pizzas[id] != undefined) {
+    return this.pizzas[id];
+  }
+  return false;
 };
 
 function Pizza(name, addr, toppings, size){
@@ -31,7 +39,22 @@ Pizza.prototype.cost = function() {
   } else {
     cost = 7 + 3 * this.toppings.length;
   }
-  return cost
+  return cost;
+}
+
+// UI logics
+let order = new Order();
+
+function displayOrderDetails(orderToDisplay) {
+  let pizzasList = $("ul#order");
+  let orderInfo = "";
+  console.log(orderToDisplay.pizzas);
+  Object.keys(orderToDisplay.pizzas).forEach(function(key) {
+    const pizza = orderToDisplay.findPizza(key);
+    console.log(pizza)
+    orderInfo += "<li id=" + pizza.id + ">" + pizza.size + " " + "with " + pizza.toppings.join(", ") + " " + "</li>";
+  });
+  pizzasList.html(orderInfo);
 }
 
 $(document).ready(function() {
@@ -52,12 +75,15 @@ $(document).ready(function() {
     let total = (cost + tax + tips).toFixed(2);
     $(".name").html(myPizza.name);
     $(".addr").html(myPizza.addr);
-    $(".size").html(myPizza.size);
-    $(".toppings").html(myPizza.toppings.join(", "));
+    // $(".size").html(myPizza.size);
+    // $(".toppings").html(myPizza.toppings.join(", "));
     $(".cost").html("$ " + cost);
     $(".tax").html("$ " + tax);
     $(".tips").html("$ " + tips);
     $(".total").html("$ " + total);
     $("#receipt").show();
+    
+    order.addPizza(myPizza);
+    displayOrderDetails(order);
   });
 });
