@@ -48,6 +48,13 @@ let myPizza = new Pizza("Ben", "1 Technology Dr, Irvine, Ca 92780", ["anchovies"
 myPizza.cost();\
 Expected Output: 12
 
+```sh
+Describe: Order()
+```
+Test: "It should return a Order object with a property of itemId and a Pizza object"\
+Code: let myOrder = new Order();\
+Expected Output: Order {pizzas: {…}, itemid: 0} 
+
 ## Known Bugs
 
 * Can submit order without entering name and address

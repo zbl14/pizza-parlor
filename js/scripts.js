@@ -1,3 +1,8 @@
+function Order() {
+  this.pizzas = {};
+  this.itemid = 0;
+}
+
 function Pizza(name, addr, toppings, size){
   this.name = name;
   this.addr = addr;
