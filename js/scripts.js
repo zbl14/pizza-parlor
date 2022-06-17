@@ -8,6 +8,11 @@ Order.prototype.assignId = function() {
   return this.itemId;
 };
 
+Order.prototype.addPizza = function(pizza) {
+  pizza.id = this.assignId();
+  this.pizzas[pizza.id] = pizza;
+};
+
 function Pizza(name, addr, toppings, size){
   this.name = name;
   this.addr = addr;

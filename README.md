@@ -59,10 +59,23 @@ Expected Output: Order {pizzas: {…}, itemId: 0}
 Describe: assignId()
 ```
 Test: "It should return a new ID"\
-Code: 
+Code:\
 let myOrder = new Order();\
 myOrder.assignId();\
 Expected Output: 1
+
+```sh
+Describe: addPizza()
+```
+Test: "It should return a Order object with id 1 and a Pizza object"\
+Code: \
+let myPizza = new Pizza("Ben", "address", ["apple" , "cheese"], "Medium")\
+myOrder.addPizza(myPizza);\
+Expected Output:\
+Order {pizzas: {…}, itemId: 1}\
+itemId: 1\
+pizzas:\
+1: Pizza {name: 'Ben', addr: 'address', toppings: Array(2), size: 'Medium', id: 1}\
 
 
 
