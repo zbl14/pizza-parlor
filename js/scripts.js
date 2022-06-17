@@ -8,9 +8,9 @@ function Pizza(name, addr, toppings, size){
 
 Pizza.prototype.cost = function() {
   let cost;
-  if (this.size === "small") {
+  if (this.size === "Small") {
     cost = 5 + 3 * this.toppings.length;
-  } else if (this.size === "medium") {
+  } else if (this.size === "Medium") {
     cost = 6 + 3 * this.toppings.length;
   } else {
     cost = 7 + 3 * this.toppings.length;
@@ -39,6 +39,6 @@ $(document).ready(function() {
     $(".addr").html(myPizza.addr);
     $(".size").html(myPizza.size);
     $(".toppings").html(myPizza.toppings.join(", "));
-    $(".total").html(total);
+    $(".total").html("$ " + total);
   });
 });
