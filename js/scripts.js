@@ -34,10 +34,11 @@ $(document).ready(function() {
       selectedToppings.push($(this).val());
     });
     let myPizza = new Pizza(inputtedName, inputtedAddr, selectedToppings, selectedSize);
-
+    let total = myPizza.cost()
     $(".name").html(myPizza.name);
     $(".addr").html(myPizza.addr);
     $(".size").html(myPizza.size);
     $(".toppings").html(myPizza.toppings.join(", "));
+    $(".total").html(total);
   });
 });
