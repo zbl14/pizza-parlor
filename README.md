@@ -1,3 +1,25 @@
+# Pizza Parlor
+
+#### By Zhibin Liang
+
+#### A webpage app for online ordering pizza
+
+## Technologies Used
+
+* HTML
+* CSS
+* JavaScript
+
+## Setup/Installation Requirements
+
+1. Clone the repo
+    ```sh
+    git clone (https://github.com/zbl14/pizza-parlor.git)
+    ```
+2. Open index.html file
+3. Enter Name and Address, select the size and toppings for your customized pizza
+4. Submit your oder to recieve a receipt
+
 ## Specs
 ```sh
 Describe: Pizza()
@@ -25,3 +47,13 @@ Code:
 let myPizza = new Pizza("Ben", "1 Technology Dr, Irvine, Ca 92780", ["anchovies", "pineapple"], "medium");\
 myPizza.cost();\
 Expected Output: 12
+
+## Known Bugs
+
+* Can submit order without entering name and address
+
+## License
+
+MIT
+
+Copyright &copy; 2022 Zhibin Liang 
