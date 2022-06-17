@@ -48,14 +48,21 @@ let order = new Order();
 function displayOrderDetails(orderToDisplay) {
   let pizzasList = $("ul#order");
   let orderInfo = "";
-  console.log(orderToDisplay.pizzas);
   Object.keys(orderToDisplay.pizzas).forEach(function(key) {
     const pizza = orderToDisplay.findPizza(key);
-    console.log(pizza)
-    orderInfo += "<li id=" + pizza.id + ">" + pizza.size + " " + "with " + pizza.toppings.join(", ") + " " + "</li>";
+    orderInfo += "<li id=" + pizza.id + ">" + pizza.size + " " + ": " + pizza.toppings.join(", ") + " " + "</li>";
   });
   pizzasList.html(orderInfo);
 }
+
+// function totalCost(orderCost) {
+//   let pizzasTotalCost = $(".cost")
+//   Object.keys(orderCost.pizzas).forEach(function(key) {
+//     const pizza = orderCost.findPizza(key);
+//     const orderTotalCost = pizza.cost();
+//   });
+//   pizzasTotalCost.html(orderTotalCost)
+// }
 
 $(document).ready(function() {
   $("form#orderInfo").submit(function(event) {
