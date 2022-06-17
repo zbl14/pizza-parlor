@@ -18,4 +18,10 @@ Test: "It should return the cost of a pizza based on the selected size"\
 Code: 
 let myPizza = new Pizza("Ben", "1 Technology Dr, Irvine, Ca 92780", ["anchovies", "pineapple"], "medium");\
 myPizza.cost();\
-Expected Output:6
+Expected Output: 6
+
+Test: "It should return the cost of a pizza based on the selected size and the servisings of toppings"\
+Code: 
+let myPizza = new Pizza("Ben", "1 Technology Dr, Irvine, Ca 92780", ["anchovies", "pineapple"], "medium");\
+myPizza.cost();\
+Expected Output: 12

@@ -10,11 +10,11 @@ let myPizza = new Pizza("Ben", "1 Technology Dr, Irvine, Ca 92780", ["anchovies"
 Pizza.prototype.cost = function() {
   let cost;
   if (this.size === "small") {
-    cost = 5;
+    cost = 5 + 3 * this.toppings.length;
   } else if (this.size === "medium") {
-    cost = 6;
+    cost = 6 + 3 * this.toppings.length;
   } else {
-    cost = 7;
+    cost = 7 + 3 * this.toppings.length;
   }
   return cost
 }
