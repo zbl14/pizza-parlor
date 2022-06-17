@@ -1,7 +1,12 @@
 function Order() {
   this.pizzas = {};
-  this.itemid = 0;
+  this.itemId = 0;
 }
+
+Order.prototype.assignId = function() {
+  this.itemId += 1;
+  return this.itemId;
+};
 
 function Pizza(name, addr, toppings, size){
   this.name = name;

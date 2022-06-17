@@ -53,7 +53,18 @@ Describe: Order()
 ```
 Test: "It should return a Order object with a property of itemId and a Pizza object"\
 Code: let myOrder = new Order();\
-Expected Output: Order {pizzas: {…}, itemid: 0} 
+Expected Output: Order {pizzas: {…}, itemId: 0} 
+
+```sh
+Describe: assignId()
+```
+Test: "It should return a new ID"\
+Code: 
+let myOrder = new Order();\
+myOrder.assignId();\
+Expected Output: 1
+
+
 
 ## Known Bugs
 
