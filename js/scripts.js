@@ -5,7 +5,6 @@ function Pizza(name, addr, toppings, size){
   this.size = size;
 }
 
-let myPizza = new Pizza("Ben", "1 Technology Dr, Irvine, Ca 92780", ["anchovies", "pineapple"], "medium");
 
 Pizza.prototype.cost = function() {
   let cost;
@@ -18,3 +17,19 @@ Pizza.prototype.cost = function() {
   }
   return cost
 }
+
+
+// let myPizza = new Pizza("name", "deliveryAddr", [], "orederedsize");
+
+
+$(document).ready(function() {
+  $("form#orderInfo").submit(function(event) {
+    event.preventDefault();
+    
+    const inputtedName = $("input#inputtedName").val(); 
+    let myPizza = new Pizza(inputtedName);
+    $(".name").html(myPizza.name);
+  
+    
+  });
+});

@@ -1,0 +1,10 @@
+.flex-center-container {
+  display: flex;
+  justify-content: center;
+  width: 100%;
+}
+
+.input-container {
+  width: 30%;
+  margin: 1rem;
+}
