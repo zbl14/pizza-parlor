@@ -28,10 +28,13 @@ $(document).ready(function() {
     
     const inputtedName = $("input#inputtedName").val(); 
     const inputtedAddr = $("input#inputtedAddr").val(); 
-    let myPizza = new Pizza(inputtedName, inputtedAddr);
+    const selectedSize = $("input:radio[name=sizeSurvey]:checked").val();
+
+
+    let myPizza = new Pizza(inputtedName, inputtedAddr, "",selectedSize);
+
     $(".name").html(myPizza.name);
     $(".addr").html(myPizza.addr);
-  
-    
+    $(".size").html(myPizza.size);
   });
 });

@@ -7,3 +7,12 @@
   width: 30%;
   margin: 1rem;
 }
+
+.sizeSurvey label {
+  display: inline-block;
+  background-color: #ddd;
+  padding: 4px 11px;
+  font-family: Arial;
+  font-size: 16px;
+  cursor: pointer;
+}
