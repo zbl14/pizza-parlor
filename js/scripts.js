@@ -27,8 +27,10 @@ $(document).ready(function() {
     event.preventDefault();
     
     const inputtedName = $("input#inputtedName").val(); 
-    let myPizza = new Pizza(inputtedName);
+    const inputtedAddr = $("input#inputtedAddr").val(); 
+    let myPizza = new Pizza(inputtedName, inputtedAddr);
     $(".name").html(myPizza.name);
+    $(".addr").html(myPizza.addr);
   
     
   });
