@@ -75,8 +75,6 @@ $(document).ready(function() {
     let total = (cost + tax + tips).toFixed(2);
     $(".name").html(myPizza.name);
     $(".addr").html(myPizza.addr);
-    // $(".size").html(myPizza.size);
-    // $(".toppings").html(myPizza.toppings.join(", "));
     $(".cost").html("$ " + cost);
     $(".tax").html("$ " + tax);
     $(".tips").html("$ " + tips);
