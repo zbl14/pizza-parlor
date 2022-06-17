@@ -60,17 +60,17 @@
     <br>
 
     <div class="radio-toolbar" id ="tips">
-      <input type="radio" class="btn-check" name="btnradio" id="noTips" autocomplete="off">
+      <input type="radio" class="btn-check" name="tipsPct" id="noTips" value="0" autocomplete="off" checked>
       <label class="btn btn-outline-primary" for="noTips">No Tips</label>
 
-      <input type="radio" class="btn-check" name="btnradio" id="5Pct" autocomplete="off">
+      <input type="radio" class="btn-check" name="tipsPct" id="5Pct" value="0.05" autocomplete="off">
       <label class="btn btn-outline-primary" for="5Pct">5%</label>
     
-      <input type="radio" class="btn-check" name="btnradio" id="15Pct" autocomplete="off">
-      <label class="btn btn-outline-primary" for="15Pct">15%</label>
+      <input type="radio" class="btn-check" name="tipsPct" id="10Pct" value="0.10" autocomplete="off" checked>
+      <label class="btn btn-outline-primary" for="10Pct">10%</label>
     
-      <input type="radio" class="btn-check" name="btnradio" id="20Pct" autocomplete="off">
-      <label class="btn btn-outline-primary" for="20Pct">20%</label>
+      <input type="radio" class="btn-check" name="tipsPct" id="18Pct" value="0.18" autocomplete="off">
+      <label class="btn btn-outline-primary" for="18Pct">18%</label>
     </div>
   </form>
 
@@ -79,7 +79,10 @@
     <p>Delivery Address: <span class="addr"></span></p>
     <p>Selected Size: <span class="size"></span></p>
     <p>Selected Toppings: <span class="toppings"></span></p>
-    <p>Total included tax: <span class="total"></span></p>
+    <p>Subtotal: <span class="cost"></span></p>
+    <p>tax: <span class="tax"></span></p>
+    <p>Tips: <span class="tips"></span></p>
+    <p>Total: <span class="total"></span></p>
   </div>
 </body>
 </html>
