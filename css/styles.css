@@ -62,7 +62,7 @@
 }
 
 #receipt {
-  /* display: none; */
+  display: none;
   border: 2px solid #333;
   border-radius: 4px;
   width: 50%;
