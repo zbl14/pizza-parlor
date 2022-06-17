@@ -21,7 +21,7 @@
     </div>
 
     <div>
-      <h5>Which size would you like?</h5>
+      <p>Which size would you like?</p>
       <div class="sizeSurvey">
         <label>
           <input type="radio" name="sizeSurvey" value="Small">
@@ -42,6 +42,17 @@
       </div>
     </div>
 
+    <div class="form-group">
+      <p>Pick your favourite toppings</p>
+      <input type="checkbox" name="toppingsList" value="Cheese"> Cheese<br>
+      <input type="checkbox" name="toppingsList" value="Pepperoni"> Pepperoni<br>
+      <input type="checkbox" name="toppingsList" value="Sausage"> Sausage<br>
+      <input type="checkbox" name="toppingsList" value="Steak"> Steak <br>
+      <input type="checkbox" name="toppingsList" value="Anchovy"> Anchovy<br>
+      <input type="checkbox" name="toppingsList" value="Artichoke"> Artichoke<br>
+      <input type="checkbox" name="toppingsList" value="Pineapple"> Pineapple<br>
+      <input type="checkbox" name="toppingsList" value="Pineapple"> Black Olives<br>
+    </div>
 
     <div class="flex-center-container">
       <button type="submit" class="btn-primary">Submit</button>
@@ -51,8 +62,8 @@
   <div id="receipt">
     <p>Name: <span class="name"></span></p>
     <p>Delivery Address: <span class="addr"></span></p>
-    <p>Size: <span class="size"></span></p>
-
+    <p>Selected Size: <span class="size"></span></p>
+    <p>Selected Toppings: <span class="toppings"></span></p>
   </div>
 
 </body>

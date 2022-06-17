@@ -29,12 +29,15 @@ $(document).ready(function() {
     const inputtedName = $("input#inputtedName").val(); 
     const inputtedAddr = $("input#inputtedAddr").val(); 
     const selectedSize = $("input:radio[name=sizeSurvey]:checked").val();
-
-
-    let myPizza = new Pizza(inputtedName, inputtedAddr, "",selectedSize);
+    let selectedToppings = [];
+    $("input:checkbox[name=toppingsList]:checked").each(function() {
+      selectedToppings.push($(this).val());
+    });
+    let myPizza = new Pizza(inputtedName, inputtedAddr, selectedToppings, selectedSize);
 
     $(".name").html(myPizza.name);
     $(".addr").html(myPizza.addr);
     $(".size").html(myPizza.size);
+    $(".toppings").html(myPizza.toppings.join(", "));
   });
 });
