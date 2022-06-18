@@ -76,7 +76,7 @@ Expected Output:\
 Order {pizzas: {…}, itemId: 1}\
 itemId: 1\
 pizzas:\
-1: Pizza {name: 'Ben', addr: 'address', toppings: Array(2), size: 'Medium', id: 1}\
+1: Pizza {name: 'Ben', addr: 'address', toppings: Array(2), size: 'Medium', id: 1}
 
 ```sh
 Describe: findPizza()
@@ -90,7 +90,7 @@ Expected Output:\
 Order {pizzas: {…}, itemId: 1}\
 itemId: 1\
 pizzas:\
-1: Pizza {name: 'Ben', addr: 'address', toppings: Array(2), size: 'Medium', id: 1}\
+1: Pizza {name: 'Ben', addr: 'address', toppings: Array(2), size: 'Medium', id: 1}
 
 ## Known Bugs
 
