@@ -54,7 +54,7 @@ function displayOrderDetails(orderToDisplay) {
     console.log(pizza);
     orderCost = parseFloat(pizza.cost().toFixed(2));
     orderTotalCost += parseFloat(pizza.cost());
-    orderInfo += "<li id=" + pizza.id + ">" + pizza.size + " " + ": " + pizza.toppings.join(", ") + " " + "$ " + orderCost.toFixed(2) + "</li>";
+    orderInfo += "<li id=" + pizza.id + ">" + "Size: " + pizza.size + "; " + "Toppings: " + pizza.toppings.join(", ") + "; " + "$ " + orderCost.toFixed(2) + "</li>";
   });
   const tipsPct = parseFloat($("input:radio[name=tipsPct]:checked").val());
   let tax = parseFloat((orderTotalCost * 0.075).toFixed(2));
@@ -78,12 +78,7 @@ $(document).ready(function() {
     $("input:checkbox[name=toppingsList]:checked").each(function() {
       selectedToppings.push($(this).val());
     });
-    // const tipsPct = parseFloat($("input:radio[name=tipsPct]:checked").val());
     let myPizza = new Pizza(inputtedName, inputtedAddr, selectedToppings, selectedSize);
-    // let cost = parseFloat(myPizza.cost().toFixed(2));
-    // let tax = parseFloat((cost * 0.075).toFixed(2));
-    // let tips = parseFloat(((cost + tax) * tipsPct).toFixed(2));
-    // let total = (cost + tax + tips).toFixed(2);
     $(".name").html(myPizza.name);
     $(".addr").html(myPizza.addr);
     order.addPizza(myPizza);
