@@ -48,21 +48,20 @@ let order = new Order();
 function displayOrderDetails(orderToDisplay) {
   let pizzasList = $("ul#order");
   let orderInfo = "";
+  let orderCost = 0;
   Object.keys(orderToDisplay.pizzas).forEach(function(key) {
     const pizza = orderToDisplay.findPizza(key);
+    console.log(pizza);
     orderInfo += "<li id=" + pizza.id + ">" + pizza.size + " " + ": " + pizza.toppings.join(", ") + " " + "</li>";
+    orderCost += parseInt(pizza.cost());
+    
   });
+  console.log(orderCost);
   pizzasList.html(orderInfo);
+  $(".cost").html("$ " + orderCost);
+  return orderCost;
 }
 
-// function totalCost(orderCost) {
-//   let pizzasTotalCost = $(".cost")
-//   Object.keys(orderCost.pizzas).forEach(function(key) {
-//     const pizza = orderCost.findPizza(key);
-//     const orderTotalCost = pizza.cost();
-//   });
-//   pizzasTotalCost.html(orderTotalCost)
-// }
 
 $(document).ready(function() {
   $("form#orderInfo").submit(function(event) {
@@ -82,13 +81,22 @@ $(document).ready(function() {
     let total = (cost + tax + tips).toFixed(2);
     $(".name").html(myPizza.name);
     $(".addr").html(myPizza.addr);
-    $(".cost").html("$ " + cost);
+
+    order.addPizza(myPizza);
+    displayOrderDetails(order);
+    
+
+
+     
     $(".tax").html("$ " + tax);
     $(".tips").html("$ " + tips);
     $(".total").html("$ " + total);
-    $("#receipt").show();
-    
-    order.addPizza(myPizza);
-    displayOrderDetails(order);
+ 
+
+  
+    // $(".tax").html("$ " + tax);
+    // $(".tips").html("$ " + tips);
+    // $(".total").html("$ " + total);
+    $("#receipt").show();  
   });
 });
