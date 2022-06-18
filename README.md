@@ -18,7 +18,8 @@
     ```
 2. Open index.html file
 3. Enter Name and Address, select the size and toppings for your customized pizza
-4. Submit your oder to recieve a receipt
+4. Submit your oder to recieve a dynamic receipt
+5. Choose other toppings and size to get a second pizza by clicking the submit to update your receipt
 
 ## Specs
 ```sh
