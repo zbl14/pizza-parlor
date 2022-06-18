@@ -28,8 +28,6 @@ function Pizza(name, addr, toppings, size){
   this.size = size;
 }
 
-let myPizza = new Pizza();
-
 Pizza.prototype.cost = function() {
   let cost;
   if (this.size === "Small") {
