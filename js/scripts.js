@@ -33,11 +33,11 @@ let myPizza = new Pizza();
 Pizza.prototype.cost = function() {
   let cost;
   if (this.size === "Small") {
-    cost = 5 + 3 * this.toppings.length;
+    cost = 4.99 + 2.99 * this.toppings.length;
   } else if (this.size === "Medium") {
-    cost = 6 + 3 * this.toppings.length;
+    cost = 5.99 + 2.99 * this.toppings.length;
   } else {
-    cost = 7 + 3 * this.toppings.length;
+    cost = 6.99 + 2.99 * this.toppings.length;
   }
   return cost;
 }
@@ -48,18 +48,23 @@ let order = new Order();
 function displayOrderDetails(orderToDisplay) {
   let pizzasList = $("ul#order");
   let orderInfo = "";
-  let orderCost = 0;
+  let orderTotalCost = 0
   Object.keys(orderToDisplay.pizzas).forEach(function(key) {
     const pizza = orderToDisplay.findPizza(key);
     console.log(pizza);
-    orderInfo += "<li id=" + pizza.id + ">" + pizza.size + " " + ": " + pizza.toppings.join(", ") + " " + "</li>";
-    orderCost += parseInt(pizza.cost());
-    
+    orderCost = parseFloat(pizza.cost().toFixed(2));
+    orderTotalCost += parseFloat(pizza.cost());
+    orderInfo += "<li id=" + pizza.id + ">" + pizza.size + " " + ": " + pizza.toppings.join(", ") + " " + "$ " + orderCost.toFixed(2) + "</li>";
   });
-  console.log(orderCost);
-  pizzasList.html(orderInfo);
-  $(".cost").html("$ " + orderCost);
-  return orderCost;
+  const tipsPct = parseFloat($("input:radio[name=tipsPct]:checked").val());
+  let tax = parseFloat((orderTotalCost * 0.075).toFixed(2));
+  let tips = parseFloat(((orderTotalCost + tax) * tipsPct).toFixed(2));
+  let total = (orderTotalCost + tax + tips).toFixed(2);
+  $(".cost").html("$ " + orderTotalCost.toFixed(2));
+  $(".tax").html("$ " + tax);
+  $(".tips").html("$ " + tips);
+  $(".total").html("$ " + total);
+  pizzasList.html(orderInfo)
 }
 
 
@@ -73,30 +78,16 @@ $(document).ready(function() {
     $("input:checkbox[name=toppingsList]:checked").each(function() {
       selectedToppings.push($(this).val());
     });
-    const tipsPct = parseFloat($("input:radio[name=tipsPct]:checked").val());
+    // const tipsPct = parseFloat($("input:radio[name=tipsPct]:checked").val());
     let myPizza = new Pizza(inputtedName, inputtedAddr, selectedToppings, selectedSize);
-    let cost = parseFloat(myPizza.cost().toFixed(2));
-    let tax = parseFloat((cost * 0.075).toFixed(2));
-    let tips = parseFloat(((cost + tax) * tipsPct).toFixed(2));
-    let total = (cost + tax + tips).toFixed(2);
+    // let cost = parseFloat(myPizza.cost().toFixed(2));
+    // let tax = parseFloat((cost * 0.075).toFixed(2));
+    // let tips = parseFloat(((cost + tax) * tipsPct).toFixed(2));
+    // let total = (cost + tax + tips).toFixed(2);
     $(".name").html(myPizza.name);
     $(".addr").html(myPizza.addr);
-
     order.addPizza(myPizza);
     displayOrderDetails(order);
-    
-
-
-     
-    $(".tax").html("$ " + tax);
-    $(".tips").html("$ " + tips);
-    $(".total").html("$ " + total);
- 
-
-  
-    // $(".tax").html("$ " + tax);
-    // $(".tips").html("$ " + tips);
-    // $(".total").html("$ " + total);
     $("#receipt").show();  
   });
 });
